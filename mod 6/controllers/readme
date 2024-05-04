@@ -1,0 +1,10 @@
+controller controls logics among the rouyes
+is ka andar ham logic lihta ha jesa ka 
+ex:
+// (req,res,next)=>{
+//     // console.log(req.method);
+//     // res.sendFile(path.join(rootdir,'views','add-product.html'))
+//     res.render('add-product',{pageTitle:'Add Product', path:'/admin/add-product', productCSS: true, formsCSS: true, activeAddProduct:true})  //layout:false if we dont want to use layout in a particular request
+// }
+
+page ko render karana waghera or us ka andar ka logics waghera

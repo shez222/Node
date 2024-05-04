@@ -1,0 +1,65 @@
+//common things amog pug
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{title} 
+        link(rel="stylesheet", href="/css/main.css")
+        block styles 
+    body
+        header.main-header
+            nav.main-header__nav
+                ul.main-header__item-list
+                    li.main-header__item
+                        a(href="/") Shop
+                    li.main-header__item
+                        a(href="/admin/add-product") Add Product
+    block content
+
+//using it in add-product
+extends layouts/main-layout.pug
+
+block styles 
+    link(rel="stylesheet", href="/css/forms.css")
+    link(rel="stylesheet", href="/css/product.css")
+
+block content 
+    main 
+    form.product-form(action="/admin/add-product", method='POST') 
+        .form-control
+            label(for = "title") Title
+            input(type="text", name="title")#title
+
+        button.btn(type = "submit") Add Product 
+
+
+//using it in Shop
+extends layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet", href="/css/product.css")
+
+block content 
+    main
+        if prods.length > 0  
+            .grid 
+                each product in prods 
+                    article.card.product-item
+                        header.card__header
+                            h1.product__title #{product.title}
+                        div.card__image
+                            img(src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=600&h=400&fit=crop&dpr=1", alt="book")
+                        .card__content
+                            h2.product__price $19.99
+                            p.product__description A very interesting book about so many even more interesting things!
+                        .card__actions
+                            button.btn Add to cart
+        else 
+            h1 No Product   
+
+//dynami active class
+    li.main-header__item
+        a(href="/", class=(path==='/'? 'active':'')) Shop  //class conddition
+    li.main-header__item
+        a(href="/admin/add-product", class=(path==='/admin/add-product'? 'active':'')) Add Product

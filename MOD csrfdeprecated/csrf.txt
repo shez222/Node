@@ -1,0 +1,8 @@
+csrf tis used to secure our views or frontend which is driven to user because  if we
+didd'nt use csrf then attackers have a loophole that they can make dopangler of our page which has diff url but look same as 
+our page send's to user by means of email and that page is connected to by our backend by som connection on that page
+and can manipulate or change data which user enter and one more thing is that when the user make dumy it will have the which is the session id
+for user so they can easily log in through their session to backend and corrupt the info of users
+
+to avoid this we use csrf to protect our sessions whenever user visit our page or apply get req on our page it will be provide a csrf token  on backend
+which is also put in views of that get  which will be compare whenever it uses that routes if that token match than session will be aqllocated otherwise denied to access backend
