@@ -267,17 +267,6 @@ exports.getLogin = (req,res,next)=>{
     });
  }
 
-//another pakage
-//  const sgMail = require('@sendgrid/mail')
-//  sgMail.setApiKey('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')
-//  sgMail.send({
-//     to: email,
-//     from: 'bilal.shehroz420@gmail.com',
-//     subject: 'Signup Suceeded',
-//     html: '<h1>Sucessfull Signedup....</h1>'
-// })
-
-
 
 
  //-----------cookie
