@@ -7,7 +7,7 @@ const { validationResult } = require('express-validator');
 const { error } = require('console');
 const transporter = nodemailer.createTransport(sendridTransporter({
     auth:{
-        api_key: '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'
+        // api_key: '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'
     }
 }))
 exports.getLogin = (req,res,next)=>{
