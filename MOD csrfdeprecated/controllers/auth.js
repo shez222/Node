@@ -4,11 +4,7 @@ const crypto = require('crypto'); //unique secure random value
 const nodemailer = require('nodemailer');  //depsendencie to send email how  your email going to deliverde to address
 const sendridTransporter = require('nodemailer-sendgrid-transport'); //third party package through it will transfer
 
-const transporter = nodemailer.createTransport(sendridTransporter({
-    auth:{
-        // api_key: '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'
-    }
-}))
+
 exports.getLogin = (req,res,next)=>{
     // const isLoggedIn = req.get('Cookie').split('=')[1]
     // console.log(req.session.isLoggedIn);
